@@ -9,6 +9,8 @@ COPY package*.json ./
 
 # Step 4: Install dependencies
 RUN npm install
+
+COPY prisma ./prisma
 RUN npx prisma generate
 # Step 5: Copy all other files to the working directory in the container
 COPY . .
