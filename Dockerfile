@@ -1,22 +1,22 @@
-# Step 1: Define the base image to use
+# Step 1: Use official Node.js 18 image
 FROM node:18
 
-# Step 2: Set the working directory inside the container
-WORKDIR /usr
+# Step 2: Set the working directory
+WORKDIR /usr/src/app
 
-# Step 3: Copy package.json and package-lock.json (if exists)
+# Step 3: Copy package files and install dependencies
 COPY package*.json ./
-
-# Step 4: Install dependencies
 RUN npm install
 
+# Step 4: Copy Prisma files and generate Prisma client
 COPY prisma ./prisma
 RUN npx prisma generate
-# Step 5: Copy all other files to the working directory in the container
+
+# Step 5: Copy the rest of your application
 COPY . .
 
-# Step 6: Expose multiple ports
-EXPOSE 4000 5000 
+# Step 6: Expose required ports
+EXPOSE 4000 5000
 
-# Step 7: Define the command to run the app
-CMD ["sh", "-c", "npm run dev & PORT=5000 npm run dev && wait"]
+# Step 7: Start the application
+CMD ["npm", "run", "dev"]
