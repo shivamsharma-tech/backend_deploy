@@ -55,7 +55,7 @@ sudo docker run -d \
   --add-host=host.docker.internal:host-gateway \
   -p 4000:4000 -p 5000:5000 \
   -e PORTS=4000,5000 \
-  -e DATABASE_URL="postgresql://postgres:PostSQL@192.168.39.179:5432/Prisma_learn" \
+  -e DATABASE_URL="postgresql://postgres:PostSQL@152.58.97.147:5432/Prisma_learn" \
   shivamsharam/backend_deploy:latest
 "
 '''
