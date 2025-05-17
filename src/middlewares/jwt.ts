@@ -18,7 +18,7 @@ export  function generateToken(user:User){
         id:user.id,email:user.email,role:user.role.name,name:user.name
     },
     SECRET_KEY,
-    {expiresIn:"1h"}
+    {expiresIn:"10h"}
 
 )
 }
