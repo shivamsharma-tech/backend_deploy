@@ -55,7 +55,7 @@ sudo docker run -d \
   --add-host=host.docker.internal:host-gateway \
   -p 4000:4000 -p 5000:5000 \
   -e PORTS=4000,5000 \
-  -e DATABASE_URL="postgresql://admin:shivamsharma52@database-1.c7is4wy26f2y.eu-north-1.rds.amazonaws.com:5432/database-1" \
+  -e DATABASE_URL="postgresql://admin:shivamsharma@database-1.c7is4wy26f2y.eu-north-1.rds.amazonaws.com:5432/database-1" \
   shivamsharam/backend_deploy:latest
 "
 '''
